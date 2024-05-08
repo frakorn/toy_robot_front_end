@@ -1,0 +1,20 @@
+<mat-toolbar color="primary" class="mat-toolbar-centered">
+  <span [style.color]="textColor" class="title">Toy Robot Simulator </span><img class="robot-img" src="assets/icon/robot.svg" />
+</mat-toolbar>
+
+<div class="main-content">
+  <div class="command-content">
+    <console *ngIf="showConsole" [tableActive]="showTable" (onClose)="closeConsole()" (sendCommand)="receiveCommand($event)"></console>
+  </div>
+  <div class="tabletop-content">
+    <app-tabletop *ngIf="showTable"></app-tabletop>
+  </div>
+</div>
+<div class="system-bar">
+  <i class="fa fa-terminal" aria-hidden="true" (click)="openConsole()"></i> 
+  <div class="right-section">
+    <i class="fa fa-wifi item" aria-hidden="true"></i>
+    <i class="fa fa-volume-up item" aria-hidden="true"></i>
+    <div class="time item">{{time}}</div> 
+  </div>
+</div>

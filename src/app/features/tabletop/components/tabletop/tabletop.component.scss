@@ -1,0 +1,20 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); 
+  grid-template-rows: repeat(5, 1fr); 
+  gap: 0px;
+  width: 100%; 
+  height: 100%; 
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.grid-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #c5baba;
+  background-color: #FFFFFF;
+  &.even{
+    background-color: #EEEEF0;
+  }
+}

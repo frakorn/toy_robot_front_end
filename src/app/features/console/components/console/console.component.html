@@ -1,0 +1,35 @@
+<div class="terminal-container" (click)="focusInput()">
+    <input #hiddenInput class="hidden-input" type="text" [(ngModel)]="command" (keyup.enter)="send()" toUppercase />
+    <div class="terminal" *ngIf="isOpen" [class.full-size]="fullSize">
+        <div class="terminal-toolbar">
+            <div class="toolbar-buttons">
+                <button class="toolbar-button toolbar-button--exit" (click)="close()">&#10005;</button>
+                <button class="toolbar-button" (click)="toggleSize()">&#9472;</button>
+            </div>
+        </div>
+        <div class="terminal-body">
+            <div class="terminal-text">Welcome to Toy Robot Simulator Terminal!</div>
+            <div class="terminal-text margin">COMMAND LIST:</div>
+            <div class="terminal-text margin">- PLACE will put the toy robot on the table in position X,Y and facing NORTH, SOUTH, EAST or WEST.</div>
+            <div class="terminal-text">- The origin (0,0) is the SOUTH WEST most corner.</div>
+            <div class="terminal-text">- The first valid command to the robot is the PLACE command</div>
+            <div class="terminal-text">- MOVE will move the toy robot one unit forward in the direction it is currently facing.</div>
+            <div class="terminal-text">- LEFT and RIGHT will rotate the robot 90 degrees in the specified direction without changing the position of the robot.</div>
+            <div class="terminal-text">- REPORT will show a modal with the X,Y and F of the robot</div>
+            <div class="terminal-text">- CLOSE will close Robot Simulator window</div>
+            <div class="terminal-text">- CLEAR will clear simulator consolle</div>
+            <div class="terminal-text margin">- Type your command below:</div>
+            <div class="terminal-prompt">
+                <span class="prompt-user">toy-robot&#64;terminal:</span><span class="prompt-location">~</span><span
+                    class="prompt-dollar">$ </span>
+                <span class="prompt-text">{{command}}</span>
+                <span class="prompt-cursor"></span>
+            </div>
+            <div class="terminal-text margin">
+                <div class="prompt-message" *ngFor="let promptMessage of promptMessages.slice().reverse()">
+                    {{promptMessage.message}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

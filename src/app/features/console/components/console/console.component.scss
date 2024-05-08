@@ -1,0 +1,159 @@
+.terminal-container {
+    width: 100%;
+    height: 100%;
+    font-family: 'Ubuntu';
+}
+
+.terminal {
+    width: 100%;
+    height: 55%;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, .5);
+    &.full-size{
+        height: 100%;
+    }
+}
+
+.terminal-toolbar {
+    background: linear-gradient(#504b45 0%, #3c3b37 100%);
+    width: 100%;
+    padding: 0 8px;
+    box-sizing: border-box;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.toolbar-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.toolbar-button {
+    width: 12px;
+    height: 12px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    padding: 0;
+    font-size: 7px;
+    background: linear-gradient(#7d7871 0%, #595953 100%);
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 0px 1px 0px #41403A, 0px 1px 1px 0px #474642;
+    border: none;
+    margin-right: 4px;
+    cursor: pointer;
+}
+
+.toolbar-button:hover {
+    cursor: pointer;
+}
+
+.toolbar-button--exit {
+    background: linear-gradient(#f37458 0%, #de4c12 100%);
+    background-clip: padding-box;
+}
+
+.toolbar-button:focus {
+    outline: none;
+}
+
+.toolbar-user {
+    color: #d5d0ce;
+    margin-left: 4px;
+    font-size: 12px;
+    line-height: 14px;
+    margin-bottom: 1px;
+}
+
+.terminal-body {
+    background: rgba(56, 4, 40, .9);
+    height: calc(100% - 25px);
+    margin-top: -1px;
+    padding-top: 2px;
+    font-family: 'Ubuntu mono';
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+        width: 3px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #555;
+    }
+}
+
+.terminal-text {
+    color: #ddd;
+    &.margin{
+        margin-top:10px;
+    }
+}
+
+.terminal-prompt {
+    margin-top: 10px;
+    display: flex;
+}
+
+.prompt-user {
+    color: #87d441;
+}
+
+.prompt-location {
+    color: #6d85a9;
+}
+
+.prompt-dollar {
+color: #ddd;
+}
+
+.prompt-text {
+    padding-left: 5px;
+    white-space: pre;
+    color: #ddd;
+}
+
+.prompt-cursor {
+    height: 17px;
+    width: 8px;
+    background: white;
+    display: block;
+    margin-left: 2px;
+    animation: 1000ms ease infinite alternate blink;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.hidden-input {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+
+@media (max-width: 600px) {
+    .terminal {
+        max-height: 90%;
+        width: 95%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .terminal {
+        height: calc(100% - 2px);
+        max-height: calc(100% - 2px);
+    }
+    .terminal-container {
+        max-height: 50vh;
+  }
+}

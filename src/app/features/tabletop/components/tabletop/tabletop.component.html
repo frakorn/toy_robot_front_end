@@ -1,0 +1,5 @@
+<div class="grid-container">
+  <div class="grid-cell" *ngFor="let coordinate of tableTop" [class.even]="(coordinate.x + coordinate.y)%2===0">
+    <robot *ngIf="robot?.x === coordinate.x && robot?.y === coordinate.y" [robot]="robot"></robot>
+  </div>
+</div>

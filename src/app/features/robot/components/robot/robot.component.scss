@@ -1,0 +1,46 @@
+.robot-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+
+    &.north {
+        transform: rotate(0deg);
+    }
+
+    &.south {
+        transform: rotate(180deg);
+    }
+
+    &.east {
+        transform: rotate(90deg);
+    }
+
+    &.west {
+        transform: rotate(-90deg);
+    }
+
+    .robot-img {
+        width: 85%;
+    }
+}
+
+.border-box {
+    animation: pulse 1s infinite;
+}
+
+
+@keyframes pulse {
+    0% {
+       border: 4px solid yellow;
+    }
+
+    50% {
+        border: 4px solid rgb(255, 255, 255);
+    }
+
+    100% {
+        border: 4px solid rgba(255, 251, 4, 0.445);
+    }
+}
